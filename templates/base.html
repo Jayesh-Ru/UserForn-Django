@@ -1,0 +1,53 @@
+{% load static %}
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title class="brand_name">{% block title %}User Form{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href=" {% static 'base.css' %}">
+</head>
+
+<body>
+    <header>
+        <nav class="nav-bar" id="navbar">
+                <h1 id="brand_name">User Form</h1>
+           
+            <div class="nav-bar right">
+                    <a type="button" role="button" href="{% url "user_form:user_all" %}"            
+                        class="btn  basket-btn">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+                                class="bi bi-door-closed" viewBox="0 0 16 16">
+                                <path
+                                    d="M3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2zm1 13h8V2H4v13z" />
+                                <path d="M9 9a1 1 0 1 0 2 0 1 1 0 0 0-2 0z" />
+                            </svg>
+                        </div>
+                        <span class="fs15 fw500">User List</span>
+                    </a>
+                    <a type="button" role="button" href="{% url "user_form:user" %}"                
+                        class="btn  basket-btn">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+                                class="bi bi-door-closed" viewBox="0 0 16 16">
+                                <path
+                                    d="M3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2zm1 13h8V2H4v13z" />
+                                <path d="M9 9a1 1 0 1 0 2 0 1 1 0 0 0-2 0z" />
+                            </svg>
+                        </div>
+                        <span class="fs15 fw500">New Users</span>
+                    </a>
+            </div>   
+        </nav>
+                  
+    </header>
+    <div id="content">{% block content %} {% endblock %}</div>
+
+    <script src="{% static 'base.js'%}"></script>
+</body>
+</html>
